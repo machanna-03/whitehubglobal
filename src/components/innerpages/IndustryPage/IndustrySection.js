@@ -95,14 +95,14 @@ function IndustrySection() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); 
   return (
-    <Box sx={{ maxWidth: "1100px", mx: "auto", }}>
+    <Box sx={{ maxWidth: "1100px", mx: "auto",mb:isMobile? 2.5 : 6.5, }}>
 
       <Typography
         sx={{
           textAlign: "center",
           fontWeight: 800,
           fontSize: { xs: "1.2rem", md: "2rem" },
-          mb:isMobile?1: 4,
+          mb:isMobile?1: 2.5,
           p:2,
           color: "#22356F",
         }}

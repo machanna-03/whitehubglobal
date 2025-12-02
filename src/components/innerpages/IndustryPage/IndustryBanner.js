@@ -52,9 +52,9 @@ const IndustryBanner = () => {
             fontSize: { xs: "1.5rem", sm: "2.6rem", md: "4rem" },
             color: "#fff",
             letterSpacing: 1,
-            width:isMobile?320:0,
             lineHeight: 1.14,
             textShadow: "0 2px 8px rgba(60,90,190,0.06)"
+            
           }}
         >
           Industry We Serve
