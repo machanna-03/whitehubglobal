@@ -11,17 +11,17 @@ const OurPhilosophyBanner = () => {
   return (
     <Box
       sx={{
-        minHeight: { xs: 240, sm: 280, md: 300 },
-        width: "100%",
+        minHeight: { xs: 140, sm: 280, md: 300 },
+        maxwidth: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
         backgroundImage: `url(${aboutusbanner})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        py: { xs: 6, md: 10 },
+        backgroundSize: { xs: "cover", sm: "cover", md: "cover" },
+        backgroundPosition: { xs: "center", sm: "center", md: "center" },
+        py: { xs: 4, md: 10 },
         px: { xs: 2, sm: 4, md: 0 }
       }}
     >

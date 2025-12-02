@@ -22,7 +22,7 @@ const Consultant = () => {
     <Box
       sx={{
         px: { xs: 2, md: 8 },
-        py: { xs: 2.5, md: 4 },
+        py: { xs:isMobile?0: 2.5, md: 4 },
         bgcolor: "#fff",
       }}
     >
@@ -34,6 +34,7 @@ const Consultant = () => {
           fontWeight: 800,
           letterSpacing: 1,
           mb: 1,
+          mt:isMobile? 2:0,
           color: "#18326a",
           fontSize: { xs: "1.6rem", sm: "2rem" },
         }}
@@ -46,9 +47,10 @@ const Consultant = () => {
         sx={{
           maxWidth: 500,
           mx: "auto",
-          mb: 4,
+          mb:isMobile?2: 4,
           color: "#6a6c71",
           fontSize: { xs: "0.95rem", sm: "1rem" },
+          lineHeight:isMobile?1.5:1,
         }}
       >
         A guided journey that starts with expert consultation and ends with
@@ -71,7 +73,7 @@ const Consultant = () => {
               src={consultantImg}
               alt="Consultant"
               sx={{
-                width: 460,
+                width: isMobile ? 350 : 460,
                 height: isMobile ? 280 : 360,
                 objectFit: "cover",
                 borderRadius: isMobile ? "12px" : "5px",
@@ -96,8 +98,12 @@ const Consultant = () => {
                     variant="standard"
                     fullWidth
                     required
-                    InputLabelProps={{ sx: { fontSize: "1rem" } }}
-                    inputProps={{ style: { fontSize: "1rem" } }}
+                    InputLabelProps={{
+                      sx: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
+                    inputProps={{
+                      style: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
                   />
                 </Grid>
 
@@ -107,8 +113,12 @@ const Consultant = () => {
                     variant="standard"
                     fullWidth
                     required
-                    InputLabelProps={{ sx: { fontSize: "1rem" } }}
-                    inputProps={{ style: { fontSize: "1rem" } }}
+                    InputLabelProps={{
+                      sx: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
+                    inputProps={{
+                      style: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
                   />
                 </Grid>
 
@@ -118,8 +128,12 @@ const Consultant = () => {
                     variant="standard"
                     fullWidth
                     required
-                    InputLabelProps={{ sx: { fontSize: "1rem" } }}
-                    inputProps={{ style: { fontSize: "1rem" } }}
+                    InputLabelProps={{
+                      sx: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
+                    inputProps={{
+                      style: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
                   />
                 </Grid>
 
@@ -132,16 +146,30 @@ const Consultant = () => {
                     required
                     value={service}
                     onChange={(e) => setService(e.target.value)}
-                    SelectProps={{ displayEmpty: true }}
-                    sx={{ mt: 1.8 }}
-                    InputLabelProps={{
-                      sx: { fontSize: "1rem", mt: 1.5 },
+                    SelectProps={{
+                      displayEmpty: true,
+                      MenuProps: {
+                        PaperProps: {
+                          sx: {
+                            "& .MuiMenuItem-root": {
+                              fontSize: isMobile ? "0.8rem" : "0.95rem", // DROPDOWN TEXT SIZE
+                            },
+                          },
+                        },
+                      },
                     }}
-                    inputProps={{
-                      style: { fontSize: "1rem" },
+                    sx={{
+                      mt: 1.8,
+                      "& .MuiSelect-select": {
+                        fontSize: isMobile ? "0.8rem" : "1rem", // SELECTED TEXT SIZE
+                      },
                     }}
                   >
-                    <MenuItem value="" disabled>
+                    <MenuItem
+                      value=""
+                      disabled
+                      sx={{ fontSize: isMobile ? "0.8rem" : "0.95rem" }}
+                    >
                       Service you're looking for?
                     </MenuItem>
 
@@ -170,8 +198,12 @@ const Consultant = () => {
                     multiline
                     minRows={4}
                     fullWidth
-                    InputLabelProps={{ sx: { fontSize: "1rem" } }}
-                    inputProps={{ style: { fontSize: "1rem" } }}
+                    InputLabelProps={{
+                      sx: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
+                    inputProps={{
+                      style: { fontSize: isMobile ? "0.8rem" : "1rem" },
+                    }}
                   />
                 </Grid>
               </Grid>
@@ -184,9 +216,9 @@ const Consultant = () => {
                     bgcolor: "#081d43",
                     color: "#fff",
                     px: 4,
-                    py: 1.1,
+                    py: isMobile?0:1.1,
                     fontWeight: 600,
-                    fontSize: "0.9rem",
+                    fontSize: isMobile ? "0.9rem" : "0.9rem",
                     borderRadius: "6px",
                     "&:hover": { bgcolor: "#2952da" },
                   }}

@@ -113,7 +113,7 @@ const Service = () => {
     <Box
       sx={{
         position: "relative",
-        py: 8,
+        py:isMobile?4: 8,
         backgroundColor: "#e3f0fc",
         overflow: "hidden",
       }}
@@ -126,7 +126,7 @@ const Service = () => {
           px: { xs: 2, sm: 3, md: 4 },
         }}
       >
-        <Box textAlign="center" mb={4}>
+        <Box textAlign="center" mb={2}>
           <Typography
             sx={{
               fontWeight: 700,

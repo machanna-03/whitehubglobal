@@ -28,7 +28,7 @@ function Banner() {
           position: "relative",
           backgroundImage: `url(${heroImg})`,
           backgroundSize: "cover",
-          height: { xs: "300px", md: "380px" },
+          height: { xs: "200px", md: "380px" },
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           py: { xs: 6, md: 14 },
@@ -47,7 +47,7 @@ function Banner() {
         >
           <Typography
             sx={{
-              fontSize: { xs: "16px", md: "32px" },
+              fontSize: { xs: "15px", md: "32px" },
               fontWeight: 700,
               opacity: 0.9,
               lineHeight: "1.2em",
@@ -62,7 +62,7 @@ function Banner() {
           <Typography
             sx={{
               mt: 2,
-              fontSize: { xs: "13px", md: "18px" },
+              fontSize: { xs: "12px", md: "18px" },
               ml: "auto",
               lineHeight: 1.55,
               fontWeight: 500,
@@ -71,7 +71,7 @@ function Banner() {
             }}
           >
             We bring together industry experts to deliver reliable and
-            professional recruitment solutions — both locally and globally.
+            professional recruitment solutions - both locally and globally.
           </Typography>
 
           {/* BUTTONS */}

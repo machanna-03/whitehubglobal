@@ -12,7 +12,7 @@ const JobOpeningsSection = () => {
       sx={{
         maxWidth: "1200px",
         mx: "auto",
-        pt: 6,
+        pt:isMobile?2: 6,
         px: { xs: 2, md: 0 },
       }}
     >
@@ -23,7 +23,7 @@ const JobOpeningsSection = () => {
           <Typography
             sx={{
               color: "#003b5c",
-              fontSize: "1.8rem",
+              fontSize:isMobile ? "1.2rem" : "1.8rem",
               fontWeight: 700,
               mb: 2,
               textAlign: "center",
@@ -37,7 +37,7 @@ const JobOpeningsSection = () => {
             sx={{
               pl: 3,
               color: "#435963",
-              fontSize: "1.05rem",
+              fontSize:isMobile? "0.8rem" : "1.05rem",
               lineHeight: 1.8,
               "& li": { mb: 1 },
             }}
@@ -106,7 +106,7 @@ const JobOpeningsSection = () => {
             py: 2,
             borderRadius: "25px",
             fontSize: "1rem",
-            fontWeight: 600,
+            fontWeight: 500,
             textTransform: "none",
             "&:hover": {
               backgroundColor: "#022c43",
@@ -119,7 +119,7 @@ const JobOpeningsSection = () => {
 
       {/* Footer Contact Info */}
       <Box sx={{ textAlign: "center", my: 2.5 }}>
-        <Typography sx={{ color: "#435963", fontSize: "1rem" }}>
+        <Typography sx={{ color: "#435963", fontSize: "0.8rem" }}>
           Or contact us directly: +971 504059957 | info@whitehubglobal.com
         </Typography>
       </Box>

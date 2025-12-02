@@ -25,7 +25,7 @@ function MissionVision() {
       }}
     >
       <Container maxWidth={false} sx={{ maxWidth: "1400px", width: "100%" }}>
-        <Grid container alignItems="center" spacing={6}>
+        <Grid container alignItems="center" spacing={isMobile ? 2 : 6}>
           {/* Left Image */}
           <Grid
             item
@@ -39,8 +39,8 @@ function MissionVision() {
               alt="MissionVision"
               sx={{
                 width: "100%",
-                height: isMobile ? "300px" : "350px",
-                maxWidth: "600px",
+                height: isMobile ? "240px" : "350px",
+                maxWidth: "550px",
                 objectFit: "cover",
                 borderRadius: "5px",
               }}
@@ -55,10 +55,10 @@ function MissionVision() {
               sx={{
                 color: textColor,
                 mb: 2,
-                fontSize: { xs: "2rem", sm: "2.3rem", md: "2.6rem" },
+                fontSize: { xs: "1.6rem", sm: "2.3rem", md: "2.6rem" },
               }}
             >
-              Purpose & Direction
+              Purpose and Direction
             </Typography>
 
             {/* Mission */}
@@ -123,8 +123,8 @@ function MissionVision() {
                 borderRadius: "2em",
                 px: "2.2em",
                 py: "0.85em",
-                fontWeight: 600,
-                fontSize: "1rem",
+                fontWeight: 700,
+                fontSize: isMobile ? "0.8rem" : "1rem",
                 "&:hover": {
                   borderColor: "#1d295a",
                   color: "#1d295a",

@@ -3,9 +3,7 @@ import {
   Box,
   Grid,
   Typography,
-  Button,
   useMediaQuery,
-  Container,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -48,7 +46,7 @@ function Footer() {
     mb: "0.6em",
     fontWeight: 400,
     cursor: "pointer",
-    fontSize: "1rem",
+    fontSize: isMobile ? "0.9rem" : "1rem",
     transition: "color 0.2s",
     "&:hover": { color: hoverColor },
   };
@@ -57,33 +55,34 @@ function Footer() {
     color: textColor,
     fontWeight: 700,
     mb: "0.8em",
-    fontSize: "1.2rem",
+    fontSize: isMobile ? "1.1rem" : "1.2rem",
   };
 
   return (
-    <Box sx={{ bgcolor: bgColor, py: 6, p:isMobile?3:0}}>
-      <Box sx={{ maxWidth: "1200px", mx: "auto", }}>
+    <Box sx={{ bgcolor: bgColor, py: 6, p: isMobile ? 3 : 0 }}>
+      <Box sx={{ maxWidth: "1200px", mx: "auto" }}>
         <Grid container spacing={5}>
 
           {/* COLUMN 1 — ADDRESS */}
           <Grid item xs={12} sm={6} md={3}>
-           <Box
+            <Box
               component="img"
               src={logo}
               alt="WHITEHUB"
               onClick={() => navigate("/")}
-              sx={{ height: { xs: 75, sm: 85 }, cursor: "pointer" ,mb: isMobile? 1:3.5}}
+              sx={{
+                height: { xs: 70, sm: 85 },
+                cursor: "pointer",
+                mb: isMobile ? 1 : 3.5,
+              }}
             />
 
             <Typography sx={sectionTitleStyle}>Address</Typography>
 
             {addressDetails.map((loc) => (
               <Box key={loc.title}>
-                {/* ADDRESS */}
                 <Box display="flex" alignItems="flex-start" mb="0.4em">
-                  <RoomIcon
-                    sx={{ mr: "0.6em", color: textColor, fontSize: "1.25rem" }}
-                  />
+                  <RoomIcon sx={{ mr: "0.6em", color: textColor }} />
                   <Typography sx={{ color: textColor, fontSize: "0.95rem" }}>
                     {loc.address.map((line, i) => (
                       <span key={i}>
@@ -94,21 +93,15 @@ function Footer() {
                   </Typography>
                 </Box>
 
-                {/* PHONE */}
                 <Box display="flex" alignItems="center" mb="0.4em">
-                  <PhoneIcon
-                    sx={{ mr: "0.6em", color: textColor, fontSize: "1.2rem" }}
-                  />
+                  <PhoneIcon sx={{ mr: "0.6em", color: textColor }} />
                   <Typography sx={{ color: textColor, fontSize: "0.95rem" }}>
                     {loc.phone}
                   </Typography>
                 </Box>
 
-                {/* EMAIL */}
                 <Box display="flex" alignItems="center">
-                  <EmailIcon
-                    sx={{ mr: "0.6em", color: textColor, fontSize: "1.2rem" }}
-                  />
+                  <EmailIcon sx={{ mr: "0.6em", color: textColor }} />
                   <Typography sx={{ color: textColor, fontSize: "0.95rem" }}>
                     {loc.email}
                   </Typography>
@@ -127,8 +120,8 @@ function Footer() {
             ))}
           </Grid>
 
-          {/* COLUMN 3 — MENU */}
-          <Grid item xs={6} sm={6} md={3}>
+          {/* COLUMN 3 — MENU (50% on mobile) */}
+          <Grid item xs={6} sm={6} md={3} >
             <Typography sx={sectionTitleStyle}>Menu</Typography>
             {menuLinks.map((link) => (
               <Typography key={link} sx={linkStyle}>
@@ -137,7 +130,7 @@ function Footer() {
             ))}
           </Grid>
 
-          {/* COLUMN 4 — MORE */}
+          {/* COLUMN 4 — MORE (50% on mobile) */}
           <Grid item xs={6} sm={6} md={3}>
             <Typography sx={sectionTitleStyle}>More</Typography>
             {moreLinks.map((link) => (
@@ -147,46 +140,6 @@ function Footer() {
             ))}
           </Grid>
         </Grid>
-
-        {/* BUTTONS CENTERED UNDER ALL COLUMNS */}
-        {/* <Grid
-          container
-          spacing={2}
-          justifyContent={isMobile ? "center" : "flex-end"}
-          mt={2.5}
-        >
-          <Grid item xs={6} sm={6} md={3}>
-            <Button
-              fullWidth
-              sx={{
-                background: "#fff",
-                color: "#1B365D",
-                py: "0.9em",
-                fontWeight: 700,
-                borderRadius: "10px",
-                textTransform: "none",
-              }}
-            >
-              HIRE US NOW!
-            </Button>
-          </Grid>
-
-          <Grid item xs={6} sm={6} md={3}>
-            <Button
-              fullWidth
-              sx={{
-                background: "#f2f4f7",
-                color: "#1B365D",
-                py: "0.9em",
-                fontWeight: 700,
-                borderRadius: "10px",
-                textTransform: "none",
-              }}
-            >
-              FIND JOBS NOW!
-            </Button>
-          </Grid>
-        </Grid> */}
 
         {/* COPYRIGHT */}
         <Box
@@ -198,7 +151,7 @@ function Footer() {
           }}
         >
           <Typography sx={{ color: "#d9e6f2", fontSize: "0.95rem" }}>
-            Copyright © 2025 — WHITEHUB GLOBAL CONSULTANTS
+            Copyright © 2025 - WHITEHUB GLOBAL CONSULTANTS
           </Typography>
         </Box>
       </Box>
