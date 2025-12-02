@@ -11,8 +11,8 @@ const ServicesBanner = () => {
   return (
     <Box
       sx={{
-        minHeight: { xs: 240, sm: 280, md: 300 },
-        width: "100%",
+        minHeight: { xs: 140, sm: 280, md: 300 },
+        maxwidth: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -21,7 +21,7 @@ const ServicesBanner = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        py: { xs: 6, md: 10 },
+        py: { xs: 4, md: 10 },
         px: { xs: 2, sm: 4, md: 0 }
       }}
     >

@@ -27,8 +27,8 @@ const iconImg = {
 
 const textBlock = (title, desc) => (
   <Box sx={{ textAlign: "left" }}>
-    <Typography sx={{ fontWeight: 700, fontSize: "20px" }}>{title}</Typography>
-    <Typography sx={{ color: "#666", fontSize: "14px", mt: 1 }}>
+    <Typography sx={{ fontWeight: 700, fontSize: "18px" }}>{title}</Typography>
+    <Typography sx={{ color: "#666", fontSize: "12px", mt: 1   }}>
       {desc}
     </Typography>
   </Box>
@@ -63,7 +63,6 @@ const leftConnector = {
   },
 };
 
-// ==================== RIGHT CONNECTOR ====================
 const rightConnector = {
   position: "relative",
   width: "100%",
@@ -106,7 +105,7 @@ function Industries() {
         sx={{
           textAlign: "center",
           fontWeight: 800,
-          fontSize: { xs: "1.65rem", md: "2.4rem" },
+          fontSize: { xs: "1.6rem", md: "2rem" },
           mb: 4,
           color: "#22356F",
         }}
@@ -119,7 +118,7 @@ function Industries() {
         <Grid item xs={12} md={4}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1,px: isMobile? 2: 0 }}>
             {/* 1 */}
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: "flex", alignItems: "center", }}>
               {textBlock(
                 "Construction & Engineering",
                 "Reliable workforce for civil, mechanical, electrical, and infrastructure projects."

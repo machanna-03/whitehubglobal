@@ -18,33 +18,40 @@ const MissionBanner = () => {
   return (
     <Box
       sx={{
-        minHeight: { xs: 240, sm: 280, md: 300 },
-        width: "100%",
+        minHeight: { xs: 140, sm: 200, md: 300 },
+
+        maxwidth:isMobile?"100%": "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
+
         backgroundImage: `url(${aboutusbanner})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        py: { xs: 6, md: 10 },
-        px: { xs: 2, sm: 4, md: 0 },
+        backgroundSize: { xs: "cover", sm: "cover", md: "cover" },
+        backgroundPosition: { xs: "center", sm: "center", md: "center" },
+
+        py: { xs: 4, md: 10 },
+        px: { xs: 2, sm: 4, md: 0 }
       }}
     >
+      {/* Overlay */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
-          zIndex: 0,
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 100%)",
+          zIndex: 0
         }}
       />
+
       <Container
         maxWidth="md"
         sx={{
           textAlign: "center",
           position: "relative",
-          zIndex: 1,
+          zIndex: 1
         }}
       >
         <Typography
@@ -54,14 +61,13 @@ const MissionBanner = () => {
             mt: 2,
             mb: 3,
             fontWeight: 900,
-            fontSize: { xs: "2rem", sm: "2.6rem", md: "4rem" },
+            fontSize: { xs: "1.2rem", sm: "2.4rem", md: "4rem" },
             color: "#fff",
             letterSpacing: 1,
-            lineHeight: 1.14,
-            textShadow: "0 2px 8px rgba(60,90,190,0.06)",
+            lineHeight: 1.14
           }}
         >
-          Looking For Employees
+          Looking for Employees
         </Typography>
       </Container>
     </Box>

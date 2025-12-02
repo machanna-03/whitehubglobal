@@ -95,14 +95,15 @@ function IndustrySection() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); 
   return (
-    <Box sx={{ maxWidth: "1100px", mx: "auto", py: isMobile? 3.5 : 5,mb:4}}>
+    <Box sx={{ maxWidth: "1100px", mx: "auto", }}>
 
       <Typography
         sx={{
           textAlign: "center",
           fontWeight: 800,
           fontSize: { xs: "1.2rem", md: "2rem" },
-          mb: 4,
+          mb:isMobile?1: 4,
+          p:2,
           color: "#22356F",
         }}
       >
@@ -205,7 +206,7 @@ function IndustrySection() {
             <Box sx={rightConnector}></Box>
 
             {/* 3 */}
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: "flex", alignItems: "center",mb:2 }}>
               <Box sx={circle}>
                 <img src={Icon3} style={iconImg} />
               </Box>

@@ -59,7 +59,6 @@ const ServiceCard = () => {
 
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   const cardsToShow = isMobile ? 1 : isTablet ? 2 : 4;
   const cardGap = 24;
@@ -120,8 +119,8 @@ const ServiceCard = () => {
     <Box
       sx={{
         position: "relative",
-        py: 4,
-        mb:4,
+        py:isMobile?1: 4,
+        mb:isMobile?0:4,
         backgroundColor: "#e3f0fc",
         overflow: "hidden",
       }}
@@ -134,16 +133,16 @@ const ServiceCard = () => {
           px: { xs: 2, sm: 3, md: 4 },
         }}
       >
-        <Box textAlign="center" mb={4}>
+        <Box textAlign="center" mb={isMobile?0.5:4}>
           <Typography
             sx={{
               fontWeight: 700,
-              fontSize: "40px",
-              lineHeight: "52px",
+              fontSize: "30px",
+              lineHeight:isMobile? "38px":"52px",
               color: "#18326a",
             }}
           >
-            Staffing & Workforce Solutions
+            Staffing and Workforce Solutions
           </Typography>
         </Box>
 
@@ -184,7 +183,7 @@ const ServiceCard = () => {
           onScroll={handleScroll}
           sx={{
             display: "flex",
-            gap: 3,
+            gap:isMobile?5: 3,
             overflowX: isMobile ? "auto" : "hidden",
             scrollBehavior: "smooth",
             py: 2,
@@ -221,8 +220,9 @@ const ServiceCard = () => {
                 sx={{
                   width: 85,
                   height: 90,
-                  marginY: 2.5,
+                  marginY:isMobile?0: 2.5,
                   mx: "auto",
+                  pt:isMobile?2:0
                 }}
               />
 
@@ -242,7 +242,8 @@ const ServiceCard = () => {
                   sx={{
                     fontSize: "15px",
                     color: "#6a6a8e",
-                    my: 1.5,
+                    my:isMobile?1: 1.5,
+                    lineHeight:isMobile?1.25:1.5
                   }}
                 >
                   {service.description}

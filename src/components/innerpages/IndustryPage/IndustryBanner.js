@@ -11,8 +11,8 @@ const IndustryBanner = () => {
   return (
     <Box
       sx={{
-        minHeight: { xs: 240, sm: 280, md: 300 },
-        width: "100%",
+        minHeight: { xs: 140, sm: 280, md: 300 },
+        maxwidth: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -21,7 +21,7 @@ const IndustryBanner = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        py: { xs: 6, md: 10 },
+        py: { xs: 4, md: 10 },
         px: { xs: 2, sm: 4, md: 0 }
       }}
     >
@@ -49,9 +49,10 @@ const IndustryBanner = () => {
             mt: 2,
             mb: 3,
             fontWeight: 900,
-            fontSize: { xs: "2rem", sm: "2.6rem", md: "4rem" },
+            fontSize: { xs: "1.5rem", sm: "2.6rem", md: "4rem" },
             color: "#fff",
             letterSpacing: 1,
+            width:isMobile?320:0,
             lineHeight: 1.14,
             textShadow: "0 2px 8px rgba(60,90,190,0.06)"
           }}

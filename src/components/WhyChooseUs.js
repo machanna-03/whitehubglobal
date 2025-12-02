@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography, Button, List, ListItem, ListItemText } from "@mui/material";
+import { Box, Grid, Typography, Button, List, ListItem, ListItemText, useTheme, useMediaQuery } from "@mui/material";
 import whyChooseUs from "../../src/assests/manpower-supply.webp";
 
 const textColor = "#22356F";
@@ -12,6 +12,8 @@ function WhyChooseUs() {
     "Ethical and compliant recruitment practices",
     "Dedicated and experienced team focused on client satisfaction"
   ];
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Box sx={{ bgcolor: "#eff5faff", p: { xs: 3, sm: 5, md: 8 } }}>
@@ -31,8 +33,8 @@ function WhyChooseUs() {
               fontWeight={700}
               sx={{
                 color: textColor,
-                mb: 2,
-                fontSize: { xs: "2rem", sm: "2.3rem", md: "2.6rem" }
+                mb:isMobile?0: 2,
+                fontSize: { xs: "1.8rem", sm: "2.3rem", md: "2.6rem" }
               }}
             >
               Why Choose Us
@@ -52,7 +54,7 @@ function WhyChooseUs() {
                   disableGutters
                 >
                   <Typography 
-                    sx={{ color: textColor, fontSize: "1.2rem", fontWeight: 700, mt: "0.25em" }}
+                    sx={{ color: textColor, fontSize: "1rem", fontWeight: 800, mt: "0.25em" }}
                   >
                     &gt;
                   </Typography>
@@ -61,7 +63,7 @@ function WhyChooseUs() {
                       <Typography
                         sx={{
                           color: "#404040",
-                          fontSize: { xs: "0.9rem", md: "1rem" },
+                          fontSize: { xs: "0.8rem", md: "1rem" },
                           fontWeight: 400,
                           lineHeight: 1.7
                         }}
@@ -82,7 +84,7 @@ function WhyChooseUs() {
                 px: "1.5em",
                 py: "0.5em",
                 fontWeight: 600,
-                fontSize: "1.2rem",
+                fontSize: "1rem",
                 '&:hover': {
                   borderColor: "#1d295a",
                   color: "#1d295a",

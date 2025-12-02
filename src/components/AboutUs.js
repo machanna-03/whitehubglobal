@@ -40,7 +40,7 @@ function AboutUs() {
               alt="About Us"
               sx={{
                 width:"100%",
-                maxWidth: { xs: "340px", md: "650px" },
+                maxWidth: { xs: "300px", md: "650px" },
                 objectFit: "cover",
                 borderRadius: { xs: "12px", md: "5px" },
               }}
@@ -76,7 +76,7 @@ function AboutUs() {
               exceptional talent with leading employers across various
               industries. Experts from various industries have gathered under
               one platform to provide the best and most reliable recruitment
-              services — ensuring that every industry’s manpower requirement is
+              services - ensuring that every industry’s manpower requirement is
               fulfilled professionally, effectively, and efficiently.
               <br />
               With a deep understanding of the UAE labor market and global
@@ -98,7 +98,7 @@ function AboutUs() {
                 px: "2em",
                 py: "0.7em",
                 fontWeight: 600,
-                fontSize: "0.95rem",
+                fontSize: "0.8rem",
                 "&:hover": {
                   borderColor: "#1d295a",
                   color: "#1d295a",

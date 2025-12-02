@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Box, Container, Stack, Typography, IconButton } from "@mui/material";
+import { Box, Container, Stack, Typography, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 function Navbar() {
   const [showBar, setShowBar] = React.useState(true);
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   if (!showBar) return null; // 🔥 Hides the bar when user clicks close
 
   return (
@@ -35,12 +36,12 @@ function Navbar() {
           <Typography
             sx={{
               fontWeight: 600,
-              fontSize: { xs: 13, sm: 16 },
+              fontSize: { xs: 9, sm: 16 },
               lineHeight: 1.2,
             }}
           >
-            WHITEHUB GLOBAL CONSULTANTS —{" "}
-            <span style={{ fontSize: "85%", fontWeight: 400 }}>
+            WHITEHUB GLOBAL CONSULTANTS -{" "}
+            <span style={{ fontSize:isMobile?"80%": "85%", fontWeight: 400 }}>
               Global manpower solutions for every industry
             </span>
           </Typography>
