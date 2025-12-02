@@ -63,7 +63,6 @@ const leftConnector = {
   },
 };
 
-// ==================== RIGHT CONNECTOR ====================
 const rightConnector = {
   position: "relative",
   width: "100%",
