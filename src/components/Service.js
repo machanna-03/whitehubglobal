@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, Card, CardContent, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 import icon1 from "../../src/assests/branding.svg";
 import icon2 from "../../src/assests/development.svg";
@@ -7,12 +14,12 @@ import icon3 from "../../src/assests/app.svg";
 
 const services = [
   {
-  icon: icon1,
-  title: "Skilled Workforce Deployment",
-  description:
-    "Supplying trained and certified workers for specialized roles across industries like construction, hospitality, and facility management.",
-  link: "#",
-},
+    icon: icon1,
+    title: "Skilled Workforce Deployment",
+    description:
+      "Supplying trained and certified workers for specialized roles across industries like construction, hospitality, and facility management.",
+    link: "#",
+  },
 
   {
     icon: icon2,
@@ -58,13 +65,13 @@ const Service = () => {
 
   const scrollToIndex = (index) => {
     if (!scrollRef.current) return;
-    
+
     const cardWidth = scrollRef.current.children[0]?.offsetWidth || 0;
     const scrollPosition = index * (cardWidth + cardGap);
-    
+
     scrollRef.current.scrollTo({
       left: scrollPosition,
-      behavior: "smooth"
+      behavior: "smooth",
     });
     setCurrentIndex(index);
   };
@@ -84,11 +91,11 @@ const Service = () => {
   // Handle scroll events to update current index
   const handleScroll = () => {
     if (!scrollRef.current || !isMobile) return;
-    
+
     const scrollLeft = scrollRef.current.scrollLeft;
     const cardWidth = scrollRef.current.children[0]?.offsetWidth || 0;
     const newIndex = Math.round(scrollLeft / (cardWidth + cardGap));
-    
+
     if (newIndex !== currentIndex) {
       setCurrentIndex(newIndex);
     }
@@ -113,7 +120,7 @@ const Service = () => {
     <Box
       sx={{
         position: "relative",
-        py:isMobile?4: 8,
+        py: 8,
         backgroundColor: "#e3f0fc",
         overflow: "hidden",
       }}
@@ -126,7 +133,7 @@ const Service = () => {
           px: { xs: 2, sm: 3, md: 4 },
         }}
       >
-        <Box textAlign="center" mb={2}>
+        <Box textAlign="center" mb={4}>
           <Typography
             sx={{
               fontWeight: 700,
@@ -201,7 +208,9 @@ const Service = () => {
               sx={{
                 flex: isMobile
                   ? `0 0 calc(100% - ${cardGap / 2}px)`
-                  : `0 0 calc(${100 / cardsToShow}% - ${cardGap * (cardsToShow - 1) / cardsToShow}px)`,
+                  : `0 0 calc(${100 / cardsToShow}% - ${
+                      (cardGap * (cardsToShow - 1)) / cardsToShow
+                    }px)`,
                 minWidth: isMobile ? "calc(85% - 12px)" : "auto",
                 borderRadius: "5px",
                 background: "#fff",
@@ -274,8 +283,8 @@ const Service = () => {
             }}
           >
             {/* Left Arrow */}
-            <button 
-              onClick={scrollLeft} 
+            <button
+              onClick={scrollLeft}
               style={arrowBtnStyle}
               disabled={currentIndex === 0}
             >
@@ -300,8 +309,8 @@ const Service = () => {
             </Box>
 
             {/* Right Arrow */}
-            <button 
-              onClick={scrollRight} 
+            <button
+              onClick={scrollRight}
               style={arrowBtnStyle}
               disabled={currentIndex === services.length - 1}
             >
